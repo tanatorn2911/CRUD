@@ -14,8 +14,12 @@ export class UserService{
         return this.userRepository.find();
     }
 
-    findOne(id): Promise<UserEntity>{
-        return this.userRepository.findOne(id);
+    findOne(id: number): Promise<UserEntity>{
+        return this.userRepository.findOne({
+            where: {
+                id: id,
+            }
+        });
     }
 
     create(user:UserEntity): Promise<UserEntity>{

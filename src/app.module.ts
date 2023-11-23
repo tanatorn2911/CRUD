@@ -11,7 +11,7 @@ import { UserModel } from './user.module';
     port:3306,
     username: 'root',
     password:'',
-    database:'test',
+    database:'nestjs',
     autoLoadEntities: true,
     synchronize:true,
 
