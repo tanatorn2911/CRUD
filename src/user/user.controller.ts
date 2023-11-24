@@ -1,4 +1,4 @@
-import { Controller,Res,HttpStatus,Get,Param,Post ,Body,Put,Delete} from "@nestjs/common"; //ไฟล์ทำหน้าที่ CRUD
+import { Controller,Res,HttpStatus,Get,Param,Post ,Body,Put,Delete} from "@nestjs/common"; //ไฟล์ทำหน้าที่บกบอกAPIผ่านpathไหนได้บ้าง
 import {  UserService } from "./user.service";
 import { UserEntity } from "./user.entity";
 import { Response } from "express";
@@ -37,6 +37,6 @@ export class UserController{
     @Delete(':id')
     async delete(@Param('id') id: number, @Res() res: Response) {
         const response = await this.UserService.remove(id);
-        return response;
+        return res.status(200).json(response);
     }
 }
