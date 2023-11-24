@@ -1,4 +1,4 @@
-import { Controller,Res,HttpStatus,Get,Param,Post ,Body,Put,Delete} from "@nestjs/common";
+import { Controller,Res,HttpStatus,Get,Param,Post ,Body,Put,Delete} from "@nestjs/common"; //ไฟล์ทำหน้าที่ CRUD
 import {  UserService } from "./user.service";
 import { UserEntity } from "./user.entity";
 import { Response } from "express";

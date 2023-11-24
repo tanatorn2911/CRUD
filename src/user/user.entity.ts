@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"; //สร้างtable
 
 @Entity("user") //ประกาศ
 export class UserEntity{
