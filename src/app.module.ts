@@ -7,11 +7,11 @@ import { UserModel } from './user/user.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
-    type:'mysql',
+    type:'postgres',
     host:'localhost',
-    port:3306,
-    username: 'root',
-    password:'',
+    port:5432,
+    username: 'postgres',
+    password:'admin1234',
     database:'nestjs',
     autoLoadEntities: true,
     synchronize:true,
