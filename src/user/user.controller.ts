@@ -2,6 +2,7 @@ import { Controller,Res,HttpStatus,Get,Param,Post ,Body,Put,Delete} from "@nestj
 import {  UserService } from "./user.service";
 import { UserEntity } from "./user.entity";
 import { Response } from "express";
+import { CreateUserDto } from "src/user/dto/create-user.dto";
 
 
 @Controller('user')
@@ -17,13 +18,13 @@ export class UserController{
     }
 
     @Get(':id')
-    async findOne(@Param('id') id: number, @Res() res: Response) {
+    async findOne(@Param('id') id: number) {
         const response = await this.UserService.findOne(id);
-        return res.status(200).json(response);
+        return response
     }
 
     @Post()
-    async create(@Body() createUserDto: UserEntity) {
+    async create(@Body() createUserDto: CreateUserDto) {
         const response = await this.UserService.create(createUserDto);
         return response;
     }
@@ -35,8 +36,8 @@ export class UserController{
     }
 
     @Delete(':id')
-    async delete(@Param('id') id: number, @Res() res: Response) {
+    async delete(@Param('id') id: number) {
         const response = await this.UserService.remove(id);
-        return res.status(200).json(response);
+        return response
     }
 }
